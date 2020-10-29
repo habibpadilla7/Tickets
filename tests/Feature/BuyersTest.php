@@ -32,8 +32,7 @@ class BuyersTest extends TestCase
             'names' => 'habib',
             'surnames' => 'padilla',
             'identification' => '73203383',
-            'email' => 'habibpadilla@hotmail.com',
-            'password' => '123456789'
+            'email' => 'habibpadilla@hotmail.com'
         ]);
         $response->assertOk();
         $this->assertCount(1,Buyer::all());
@@ -42,7 +41,6 @@ class BuyersTest extends TestCase
         $this->assertEquals($post->surnames, 'padilla');
         $this->assertEquals($post->identification, '73203383');
         $this->assertEquals($post->email, 'habibpadilla@hotmail.com');
-        $this->assertEquals($post->password, '123456789');
 
     }
 
@@ -66,16 +64,14 @@ class BuyersTest extends TestCase
             'names' => 'habib',
             'surnames' => 'padilla',
             'identification' => '73203383',
-            'email' => 'habibpadilla@hotmail.com',
-            'password' => '123456789'
+            'email' => 'habibpadilla@hotmail.com'
         ]);
         $this->assertCount(1,Buyer::all());
         $buyer= $buyer->fresh();
         $this->assertEquals($buyer->names, 'habib');
         $this->assertEquals($buyer->surnames, 'padilla');
         $this->assertEquals($buyer->identification, '73203383');
-        $this->assertEquals($buyer->email, 'habibpadilla@hotmail.com');
-        $this->assertEquals($buyer->password, '123456789');  
+        $this->assertEquals($buyer->email, 'habibpadilla@hotmail.com');  
     }
 
     /** @test */
