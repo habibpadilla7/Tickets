@@ -9,11 +9,8 @@ use Illuminate\Support\Facades\DB;
 class TicketController extends Controller
 {
     public function index(){
-        //$ticket = Ticket::all();
-        /*$ticket =Ticket::leftJoin("ticket_assignments", "tickets.id", "=", "ticket_assignments.id_ticket")
-        ->whereNull('ticket_assignments.id_ticket')
-        ->get();*/
-        $ticket=DB::table('tickets',)
+        
+        $ticket=DB::table('tickets')
             ->leftJoin('ticket_assignments', 'tickets.id', '=', 'ticket_assignments.id_ticket')
             ->whereNull('ticket_assignments.id_ticket')
             ->select('tickets.id', 'tickets.names')
@@ -26,8 +23,6 @@ class TicketController extends Controller
             'names' => ''
         ]);
         Ticket::create($data);
-        //$ticket = Ticket::create($data);
-        //return $ticket;
     }
     public function show(Ticket $ticket){
    
